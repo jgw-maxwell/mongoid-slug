@@ -76,7 +76,8 @@ module Mongoid #:nodoc:
             end
           end
 
-        localized_field slug_name
+        #localized_field slug_name
+        field slug_name
 
         if options[:index]
           index(slug_name, :unique => !slug_scope)
