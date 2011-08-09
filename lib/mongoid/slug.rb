@@ -172,7 +172,7 @@ module Mongoid #:nodoc:
         # association_name instead of forcing collection_name here -- maybe
         # in the forthcoming Mongoid refactorings?
         inverse = metadata.inverse_of || collection_name
-        parent.respond_to?(inverse) ? parent.send(inverse) : self.class
+        parent.try(inverse) ? parent.send(inverse) : self.class
       elsif embedded?
         parent_metadata = reflect_on_all_associations(:embedded_in).first
         _parent.send(parent_metadata.inverse_of || self.metadata.name)
