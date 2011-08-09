@@ -1,2 +1,2 @@
 require 'mongoid/slug'
-require 'mongoid/i18n'
+#require 'mongoid/i18n'
